@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<!-- Hero Start -->
+<div class="hero" id="home">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-sm-12 col-md-6">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p>Welcome to </p>
+                        <h1>UCool+</h1>
+                        <p>We provide way to live life happly, Get best postive content delivered based on your mood</p>
+                        <h2>.</h2>
+                        <div class="typed-text">Watch Movie, Play Games, Motivational Song and Stories, Meditation
+                            Videos
+                        </div>
+                    </div>
+                    <div class="hero-btn">
+                        <form name="detection" method="POST">
+                            {% csrf_token %}
+                            <label for="mood_sel"><h4 style="color:#ffff">Select Your Mood:</h4></label>
+                            <select class="form-control" name="mood_sel" id="mood_sel">
+                                <option>Angry</option>
+                                <option>Happy</option>
+                                <option>Sad</option>
+                                <option>Surprise</option>
+                                <option>Neutral</option>
+                            </select>
+                            <br>
+                            <label for="content_sel"><h4 style="color:#ffff">Select Your Content:</h4></label>
+                            <select class="form-control" name="content_sel" id="content_sel">
+                                <option>Movie</option>
+                                <option>Music</option>
+                                <option>Motivational Videos</option>
+                                <option>Games</option>
+                                <option>Books</option>
+                            </select>
+                            <input class="btn" type="submit">
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 d-none d-md-block">
+                <div class="hero-image">
+                    <img src="{% static 'img/hero.png' %}" alt="Hero Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

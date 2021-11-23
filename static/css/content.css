@@ -1,0 +1,6 @@
+.content_block{
+padding: 120px 0 0 0;
+background: linear-gradient(rgba(239, 35, 60, .95), rgba(239, 35, 60, .95)), url(../img/hero-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}

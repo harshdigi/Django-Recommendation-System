@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'css/content.css' %}" rel="stylesheet">
+<div class="content_block">
+    <h2 style="color: white!important"> Category: {{mood_sel}} > {{content_sel}}</h2>
+    <div class="row">
+        {% for dict_item in full_details %}
+        <div class="col-lg-4 col-md-6" style="padding: 20px!important">
+        <div class="movie_col ">
+            <div class="card">
+                <iframe class="card-img-top" style="height: 15rem!important" src="{{dict_item.trailer}}" frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">{{dict_item.title}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Year: {{dict_item.year}}</li>
+                    <li class="list-group-item">Rating: {{dict_item.rating}}</li>
+                    <li class="list-group-item">Runtime: {{dict_item.time}}</li>
+                    <li class="list-group-item">Genre: {{dict_item.genre}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href="{{dict_item.imdb_link}}" target="_blank" class="card-link">More Details</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+{% endblock %}
